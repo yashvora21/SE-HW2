@@ -11,7 +11,7 @@ These design patterns generally focus on the class instantiation which can be fu
 The Abstract Factory Design basically provides an interface for creating families of related or dependent objects without specifying their concrete classes. This factory creates the platform objects directly for the clients  as the "factory" object holds the responsibility for providing creation services for the entire platform family. The exchanging of product families becomes quite easy by this mechanism as the specific class of the factory object appears only once in the application - where it is instantiated. The application can completely replace the entire family of products simply by instantiating a different concrete instance of the abstract factory. This factory is usually implemented as a Singleton as the services provided by it are quite widespread. 
 
 The Abstract Factory defines a Factory Method per product. Each Factory Method encapsulates the new operator and the concrete, platform-specific, product classes. Each "platform" is then modeled with a Factory derived class. The structure basically looks like this:  
-![img](HW2/images/abstract.svg)
+![img](/images/abstract.svg)
 
 #### Few facts about Abstract Factory Design Pattern
 **1.** Abstract Factory classes are often implemented with Factory Methods, but they can also be implemented using Prototype.  
@@ -21,7 +21,7 @@ The Abstract Factory defines a Factory Method per product. Each Factory Method e
 
 #### ii. Prototype Design Pattern
 The Prototype is an early sample, model, or release of a product built in any Design to test a concept or process or to act as a thing to be replicated or learned from. Likewise, the Prototype Design Pattern basically specifies the kinds of objects to create using a prototypical instance, and also create new objects by copying this prototype. This is basically achieved by declaring an abstract base class that specifies a pure virtual "clone" method, and, maintains a dictionary of all "cloneable" concrete derived classes. Any class that needs a "polymorphic constructor" capability: derives itself from the abstract base class, registers its prototypical instance, and implements the clone() operation. The client then, basically does not invoke the "new" operator on a hard-wired class name, but calls a "clone" operation on the abstract base class, supplying a string or enumerated data type that designates the particular concrete derived class desired. The structure of this design pattern looks like the following:  
-![img](HW2/images/prototype.svg)
+![img](/images/prototype.svg)
 
 #### Some Checklist points to maintain for this design pattern:  
 * Add a clone() method to the existing "product" hierarchy.
