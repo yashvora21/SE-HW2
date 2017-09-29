@@ -33,7 +33,7 @@ The Prototype is an early sample, model, or release of a product built in any De
 **3.** Prototype co-opts one instance of a class for use as a breeder of all future instances.  
 **4.** Prototypes are useful when object initialization is expensive, and few variations are anticipated on the initialization parameters. In this context, Prototype can avoid expensive "creation from scratch", and support cheap cloning of a pre-initialized prototype.  
 
-### Structural Patterns
+### 2. Structural Patterns
 Structural Patterns are very important in Software Engineering as they help in better understanding of the design by identifying a simple way to realize relationships between entities. The Structural design patterns includes but not limited to the following patterns:  
 
 #### i. Facade Design Pattern
@@ -59,8 +59,11 @@ Private Class Data is very important type of design pattern required by every ap
 * Expose each attribute (variable or property) of data class through a getter.
 * Expose each attribute that will change in further through a setter.
 
-### Behavioral Patterns
+### 3. Behavioral Patterns
+Behavioral Patterns are those design patterns in software engineering that identify common communication patterns between objects and realize these patterns thus increasing flexibility in carrying out this communication. The very fundamental duties of this pattern are the assignment of responsibilities between objects, or, encapsulating behavior in an object and delegating requests to it. The following Behavioral patterns helps to understand this design pattern better:
 
+#### i. Command Design Pattern
+This pattern basically encapsulates a request as an object, that basically parameterizes clients with different requests, queue or log requests, and support undoable operations. It is an object-oriented callback which invokes a method on an object to full object status. There could be situations where we need to issue requests to objects without having any knowledge about the operation being requested or the receiver of the request. 
 
 
 
