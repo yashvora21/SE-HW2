@@ -20,7 +20,7 @@ The Abstract Factory defines a Factory Method per product. Each Factory Method e
 
 
 #### ii. Prototype Design Pattern
-The Prototype is an early sample, model, or release of a product built in any Design to test a concept or process or to act as a thing to be replicated or learned from. Likewise, the Prototype Design Pattern basically specifies the kinds of objects to create using a prototypical instance, and also create new objects by copying this prototype. This is basically achieved by declaring an abstract base class that specifies a pure virtual "clone" method, and, maintains a dictionary of all "cloneable" concrete derived classes. Any class that needs a "polymorphic constructor" capability: derives itself from the abstract base class, registers its prototypical instance, and implements the clone() operation. The client then, basically does not invoke the "new" operator on a hard-wired class name, but calls a "clone" operation on the abstract base class, supplying a string or enumerated data type that designates the particular concrete derived class desired. The structure of this design pattern looks like the following:
+The Prototype is an early sample, model, or release of a product built in any Design to test a concept or process or to act as a thing to be replicated or learned from. Likewise, the Prototype Design Pattern basically specifies the kinds of objects to create using a prototypical instance, and also create new objects by copying this prototype. This is basically achieved by declaring an abstract base class that specifies a pure virtual "clone" method, and, maintains a dictionary of all "cloneable" concrete derived classes. Any class that needs a "polymorphic constructor" capability: derives itself from the abstract base class, registers its prototypical instance, and implements the clone() operation. The client then, basically does not invoke the "new" operator on a hard-wired class name, but calls a "clone" operation on the abstract base class, supplying a string or enumerated data type that designates the particular concrete derived class desired. The structure of this design pattern looks like the following:  
 ![img](https://github.ncsu.edu/yvora/HW2/blob/master/images/prototype.svg)
 
 #### Some Checklist points to maintain for this design pattern:  
@@ -30,10 +30,10 @@ The Prototype is an early sample, model, or release of a product built in any De
 * The client replaces all references to the new operator with calls to the factory method.
 
 #### Few facts about Prototype Design Pattern
-**1.** Prototype doesn't require subclassing, but it does require an "initialize" operation. Factory Method requires subclassing, but doesn't require Initialize.
-**2.** Protoype is often beneficial for designs that make heavy use of the Composite and Decorator patterns.
-**3.** Prototype co-opts one instance of a class for use as a breeder of all future instances.
-**4.** Prototypes are useful when object initialization is expensive, and few variations are anticipated on the initialization parameters. In this context, Prototype can avoid expensive "creation from scratch", and support cheap cloning of a pre-initialized prototype.
+**1.** Prototype doesn't require subclassing, but it does require an "initialize" operation. Factory Method requires subclassing, but doesn't require Initialize.  
+**2.** Protoype is often beneficial for designs that make heavy use of the Composite and Decorator patterns.  
+**3.** Prototype co-opts one instance of a class for use as a breeder of all future instances.  
+**4.** Prototypes are useful when object initialization is expensive, and few variations are anticipated on the initialization parameters. In this context, Prototype can avoid expensive "creation from scratch", and support cheap cloning of a pre-initialized prototype.  
 
 
 
