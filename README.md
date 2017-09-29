@@ -10,8 +10,7 @@ These design patterns generally focus on the class instantiation which can be fu
 #### i. Abstract Factory Design Pattern
 The Abstract Factory Design basically provides an interface for creating families of related or dependent objects without specifying their concrete classes. This factory creates the platform objects directly for the clients  as the "factory" object holds the responsibility for providing creation services for the entire platform family. The exchanging of product families becomes quite easy by this mechanism as the specific class of the factory object appears only once in the application - where it is instantiated. The application can completely replace the entire family of products simply by instantiating a different concrete instance of the abstract factory. This factory is usually implemented as a Singleton as the services provided by it are quite widespread. 
 
-The Abstract Factory defines a Factory Method per product. Each Factory Method encapsulates the new operator and the concrete, platform-specific, product classes. Each "platform" is then modeled with a Factory derived class. The structure basically looks like this:  
-![img](/images/abstract.svg)
+The Abstract Factory defines a Factory Method per product. Each Factory Method encapsulates the new operator and the concrete, platform-specific, product classes. Each "platform" is then modeled with a Factory derived class.  
 
 #### Few facts about Abstract Factory Design Pattern
 **1.** Abstract Factory classes are often implemented with Factory Methods, but they can also be implemented using Prototype.  
@@ -20,8 +19,7 @@ The Abstract Factory defines a Factory Method per product. Each Factory Method e
 
 
 #### ii. Prototype Design Pattern
-The Prototype is an early sample, model, or release of a product built in any Design to test a concept or process or to act as a thing to be replicated or learned from. Likewise, the Prototype Design Pattern basically specifies the kinds of objects to create using a prototypical instance, and also create new objects by copying this prototype. This is basically achieved by declaring an abstract base class that specifies a pure virtual "clone" method, and, maintains a dictionary of all "cloneable" concrete derived classes. Any class that needs a "polymorphic constructor" capability: derives itself from the abstract base class, registers its prototypical instance, and implements the clone() operation. The client then, basically does not invoke the "new" operator on a hard-wired class name, but calls a "clone" operation on the abstract base class, supplying a string or enumerated data type that designates the particular concrete derived class desired. The structure of this design pattern looks like the following:  
-![img](/images/prototype.svg)
+The Prototype is an early sample, model, or release of a product built in any Design to test a concept or process or to act as a thing to be replicated or learned from. Likewise, the Prototype Design Pattern basically specifies the kinds of objects to create using a prototypical instance, and also create new objects by copying this prototype. This is basically achieved by declaring an abstract base class that specifies a pure virtual "clone" method, and, maintains a dictionary of all "cloneable" concrete derived classes. Any class that needs a "polymorphic constructor" capability: derives itself from the abstract base class, registers its prototypical instance, and implements the clone() operation. The client then, basically does not invoke the "new" operator on a hard-wired class name, but calls a "clone" operation on the abstract base class, supplying a string or enumerated data type that designates the particular concrete derived class desired.
 
 #### Some Checklist points to maintain for this design pattern:  
 * Add a clone() method to the existing "product" hierarchy.
@@ -39,8 +37,7 @@ The Prototype is an early sample, model, or release of a product built in any De
 Structural Patterns are very important in Software Engineering as they help in better understanding of the design by identifying a simple way to realize relationships between entities. The Structural design patterns includes but not limited to the following patterns:  
 
 #### i. Facade Design Pattern
-Facade Design Pattern basically defines a higher-level interface and provides a unified interface to a set of interfaces in a subsystem making it easier to use. Facade basically wraps and encapsulates a complicated subsystem with a single simpler interface object, thus reducing the efforts in the learning involved to successfully leverage the subsystem. It also encourages decoupling of the subsystem from its potentially many clients. Also, if the Facade is the only access point for the subsystem, it will limit the features and flexibility that "power users" may need. The facade object should be a pretty simple advocate or facilitator. The high level structure of he facade object should look like the following:  
-![img](/images/prototype.svg)  
+Facade Design Pattern basically defines a higher-level interface and provides a unified interface to a set of interfaces in a subsystem making it easier to use. Facade basically wraps and encapsulates a complicated subsystem with a single simpler interface object, thus reducing the efforts in the learning involved to successfully leverage the subsystem. It also encourages decoupling of the subsystem from its potentially many clients. Also, if the Facade is the only access point for the subsystem, it will limit the features and flexibility that "power users" may need. The facade object should be a pretty simple advocate or facilitator.
 
 #### Things to note for a Facade Design pattern:  
 * Identify a simpler, unified interface for the subsystem or component.
@@ -50,9 +47,20 @@ Facade Design Pattern basically defines a higher-level interface and provides a 
 * Consider whether additional Facades would add value.
 
 #### Use Case for a Facade:
+One of the best use cases for a facade is a customer care representative answering calls for an online ordering portal where a consumer calls a number to order something. In that case, the customer care representative acts as an inteface between several departments such as the order delivery department or the billing or the quality department.
 
+#### ii. Private Class Data
+Private Class Data is very important type of design pattern required by every application which provides control over the write access to class attributes, seperates data from the methods that use it and encapsulates class data initialization. This design pattern basically addresses a problem where a class may expose its class variables to be accessed and manipulated by anyone but it should no longer be modified. The protection of the class state by minimizing the visibility of its attribute was the sole motivation behind devising this design pattern.
 
-  
+#### Things to note for the Private Class Data
+* Create data class. Move to data class all attributes that need hiding.
+* Create in main class instance of data class.
+* Main class must initialize data class through the data class's constructor.
+* Expose each attribute (variable or property) of data class through a getter.
+* Expose each attribute that will change in further through a setter.
+
+### Behavioral Patterns
+
 
 
 
