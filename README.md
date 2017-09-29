@@ -35,6 +35,24 @@ The Prototype is an early sample, model, or release of a product built in any De
 **3.** Prototype co-opts one instance of a class for use as a breeder of all future instances.  
 **4.** Prototypes are useful when object initialization is expensive, and few variations are anticipated on the initialization parameters. In this context, Prototype can avoid expensive "creation from scratch", and support cheap cloning of a pre-initialized prototype.  
 
+### Structural Patterns
+Structural Patterns are very important in Software Engineering as they help in better understanding of the design by identifying a simple way to realize relationships between entities. The Structural design patterns includes but not limited to the following patterns:  
+
+#### i. Facade Design Pattern
+Facade Design Pattern basically defines a higher-level interface and provides a unified interface to a set of interfaces in a subsystem making it easier to use. Facade basically wraps and encapsulates a complicated subsystem with a single simpler interface object, thus reducing the efforts in the learning involved to successfully leverage the subsystem. It also encourages decoupling of the subsystem from its potentially many clients. Also, if the Facade is the only access point for the subsystem, it will limit the features and flexibility that "power users" may need. The facade object should be a pretty simple advocate or facilitator. The high level structure of he facade object should look like the following:  
+![img](/images/prototype.svg)  
+
+#### Things to note for a Facade Design pattern:  
+* Identify a simpler, unified interface for the subsystem or component.
+* Design a 'wrapper' class that encapsulates the subsystem.
+* The facade/wrapper captures the complexity and collaborations of the component, and delegates to the appropriate methods.
+* The client uses (is coupled to) the Facade only.
+* Consider whether additional Facades would add value.
+
+#### Use Case for a Facade:
+
+
+  
 
 
 
