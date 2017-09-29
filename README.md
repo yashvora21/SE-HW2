@@ -7,7 +7,8 @@ Design patterns generally help in speeding up the development process by definin
 ### 1. Creational Design Patterns
 These design patterns generally focus on the class instantiation which can be further divided into class-creation patterns and object-creational patterns. The class-creation patterns use inheritance effectively in the instantiation process while object-creation patterns use delegation effectively to get the job done. These type of design patterns includes but not limited to the following patterns:
 
-#### i. 
+#### i. Abstract Factory Design Pattern
+The abstract factory design basically provides an interface for creating families of related or dependent objects without specifying their concrete classes. 
 
 
 
