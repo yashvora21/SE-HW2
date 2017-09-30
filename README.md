@@ -16,19 +16,12 @@ The Abstract Factory Design basically provides an interface for creating familie
 The Abstract Factory defines a Factory Method per product. Each Factory Method encapsulates the new operator and the concrete, platform-specific, product classes. Each "platform" is then modeled with a Factory derived class.  
 
 #### Few facts about Abstract Factory Design Pattern
-**1.** Abstract Factory classes are often implemented with Factory Methods, but they can also be implemented using Prototype.  
-**2.** Abstract Factory can be used as an alternative to Facade to hide platform-specific classes.  
-**3.** Often, designs start out using Factory Method (less complicated, more customizable, subclasses proliferate) and evolve toward Abstract Factory, Prototype, or Builder (more flexible, more complex) as the designer discovers where more flexibility is needed.
+**1.** Abstract Factory classes are often implemented with Factory Methods, but they can also be implemented using Prototype.    
+**2.** Often, designs start out using Factory Method which is less complicated, more customizable, & subclasses proliferate and evolve towards Abstract Factory, Prototype, or Builder which are more flexible & more complex as the designer discovers where more flexibility is needed.
 
 
 #### ii. Prototype Design Pattern
 The Prototype is an early sample, model, or release of a product built in any Design to test a concept or process or to act as a thing to be replicated or learned from. Likewise, the Prototype Design Pattern basically specifies the kinds of objects to create using a prototypical instance, and also create new objects by copying this prototype. This is basically achieved by declaring an abstract base class that specifies a pure virtual "clone" method, and, maintains a dictionary of all "cloneable" concrete derived classes. Any class that needs a "polymorphic constructor" capability: derives itself from the abstract base class, registers its prototypical instance, and implements the clone() operation. The client then, basically does not invoke the "new" operator on a hard-wired class name, but calls a "clone" operation on the abstract base class, supplying a string or enumerated data type that designates the particular concrete derived class desired.
-
-#### Some Checklist points to maintain for this design pattern:  
-* Add a clone() method to the existing "product" hierarchy.
-* Design a "registry" that maintains a cache of prototypical objects. The registry could be encapsulated in a new Factory class, or in the base class of the "product" hierarchy.
-* Design a factory method that: may (or may not) accept arguments, finds the correct prototype object, calls clone() on that object, and returns the result.
-* The client replaces all references to the new operator with calls to the factory method.
 
 #### Few facts about Prototype Design Pattern
 **1.** Prototype doesn't require subclassing, but it does require an "initialize" operation. Factory Method requires subclassing, but doesn't require Initialize.  
@@ -70,7 +63,7 @@ This pattern basically encapsulates a request as an object, that basically param
 
 #### Things to note for the Command Design Pattern
 * Define a Command interface with a method signature like execute().
-* Create one or more derived classes that encapsulate some subset of the following: a "receiver" object, the method to invoke, the arguments to pass.
+* Create one or more derived classes that encapsulate some subset of a "receiver" object, or a method to invoke, or the arguments to pass.
 * Instantiate a Command object for each deferred execution request.
 * Pass the Command object from the creator (aka sender) to the invoker (aka receiver).
 * The invoker decides when to execute().
