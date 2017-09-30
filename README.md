@@ -89,7 +89,27 @@ Interpreter design pattern is basically responsible to interpret sentences in a 
 #### Use Case for the Interpreter Design Pattern
 One of the most famous example of Interpreters are Musicians. Basically, the musical notation of the pitch of a sound and its duration is represented on a staff that provides the language of music. This language is used by the Musicians playing the music from the score and are able to reproduce the original pitch and duration of each sound represented.  
 
+## Free Style Patterns
 
+### 1. Binding Properties Pattern
+The Binding properties pattern basically combines multiple observers to force properties in different objects to be synchronized or coordinated in some way. This pattern comes under concurrency patterns. There are two types of binding, viz. One-way binding which should be applied when one of the properties is read-only and two-way binding must be applied for rest of the cases. Infinite loops can be eliminated by interrupt signals, or by comparing the assigned value with the property value before assignment, or by eliminating the unnecessary assignments. Binding properties of different types can be achieved through Type Conversions. Binding properties with transformations can be achieved through reducing the transformation function to the problem of binding properties, and the function can be considered imaginary as Type Conversions. One-way binding would look like the following code snippet:
+```
+binding_properties_one_way(src_obj, src_prop, dst_objs[], dst_props[])
+{
+  for (i, j) in (dst_objs, dst_props)
+  {
+    binding_properties_one_way(src_obj, src_prop, i, j);
+  }
+}
+```
+  
+### 2. 
+
+
+
+## References
+https://sourcemaking.com/design_patterns
+https://en.wikipedia.org/wiki/Binding_properties_pattern
 
 
 
