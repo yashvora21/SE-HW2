@@ -1,6 +1,9 @@
 # HW2
 This Repo has all the files related to HW2 of Software Engineering for Fall 17
 
+## SELENIUM
+The Code for the Unit Testing using REST-SELENIUM library is at the location: [/REST-SELENIUM/WebTest.java](https://github.ncsu.edu/yvora/HW2/blob/master/REST-SELENIUM/WebTest.java)
+
 ## Design Patterns
 Design patterns generally help in speeding up the development process by defining tested, and proven development paradigms. There may be many issues that stay hidden until we actually start the implementation and use of the design patterns effectively helps us consider these issues well in advance which may cause major problems in the later stages of the project. Design Patterns are very well documented in a format and are mostly used for a generalized problem as a whole while not just focussing on a single problem. For Object-Oriented design patterns, they can be described in the following categories:
 
@@ -111,8 +114,6 @@ In computer programming, a thread pool is a software design pattern for achievin
 Guarded suspension is a software design pattern in concurrent programming for managing operations that require both a lock to be acquired and a precondition to be satisfied before the operation can be executed. The guarded suspension pattern is typically applied to method calls in object-oriented programs, and involves suspending the method call, and the calling thread, until the precondition which acts as a guard is satisfied. The guarded suspension pattern is generally only used when the developer is sure that a method call will be suspended for a reasonable finite period of time, since it blocks the execution. If a method call is suspended for too long, then the overall performance of the program is degraded, waiting for the precondition to be satisfied. If the developer is pretty sure that the method call will be suspended for indefinite or for quite a long duration, then the balking pattern may be used. In Java, the Object class provides the wait() and notify() methods to assist with guarded suspension.  
 
 An excellent example of an actual implementation would be a queue object with a get method that has a guard to detect when there are no items in the queue. Once the 'put' method notifies the other methods (eg, a get() method), the get() method can exit its guarded state and proceed with the call. Once the queue is empty, the get() method will again enter a guarded state.
-
-## The Code for the Unit Testing using REST-SELENIUM library is at the location: /REST-SELENIUM/WebTest.java
 
 ## References
 https://sourcemaking.com/design_patterns . 
