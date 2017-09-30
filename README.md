@@ -63,7 +63,31 @@ Private Class Data is very important type of design pattern required by every ap
 Behavioral Patterns are those design patterns in software engineering that identify common communication patterns between objects and realize these patterns thus increasing flexibility in carrying out this communication. The very fundamental duties of this pattern are the assignment of responsibilities between objects, or, encapsulating behavior in an object and delegating requests to it. The following Behavioral patterns helps to understand this design pattern better:
 
 #### i. Command Design Pattern
-This pattern basically encapsulates a request as an object, that basically parameterizes clients with different requests, queue or log requests, and support undoable operations. It is an object-oriented callback which invokes a method on an object to full object status. There could be situations where we need to issue requests to objects without having any knowledge about the operation being requested or the receiver of the request. 
+This pattern basically encapsulates a request as an object, that basically parameterizes clients with different requests, queue or log requests, and support undoable operations. It is an object-oriented callback which invokes a method on an object to full object status. There could be situations where we need to issue requests to objects without having any knowledge about the operation being requested or the receiver of the request. Command decouples the object that invokes the operation from the one that knows how to perform it. To achieve this separation, the designer creates an abstract base class that maps a receiver (an object) with an action (a pointer to a member function). The base class contains an execute() method that simply calls the action on the receiver. Every command objects of all clients are treated as a 'black box' that simply invokes the object's virtual execute() method whenever the client requires the object's service. Command objects can be considered as "tokens" that are created by one client that knows what need to be done, and passed to another client that has the resources for doing it.
+
+#### Things to note for the Command Design Pattern
+* Define a Command interface with a method signature like execute().
+* Create one or more derived classes that encapsulate some subset of the following: a "receiver" object, the method to invoke, the arguments to pass.
+* Instantiate a Command object for each deferred execution request.
+* Pass the Command object from the creator (aka sender) to the invoker (aka receiver).
+* The invoker decides when to execute().
+
+#### Use Case for the Command Design Pattern
+One of the examples of the Command Design Pattern is the billing system at any food outlet. The waiter or waitress takes an order or command from a customer and encapsulates that order by writing it on the notepad. This order is then queued for a short order cook. The notepad used by each waiter is not dependent on the menu, and therefore they can support commands to cook many different items.
+
+#### ii. Interpreter Design Pattern
+Interpreter design pattern is basically responsible to interpret sentences in a particular language which has a defined grammer representation. It basically maps a domain to a language, the language to a grammar, and the grammar to a hierarchical object-oriented design. Basically a class of problems that occur repeatedly in a well-defined and well-understood domain that is characterized with a language could be solved easily using an interpretation engine. Given a domain language with a simple language grammer. representing domain rules as language sentences, this pattern uses a class to represent each grammer rule and since grammers are usually hierarchical in structure, an inheritance hierarchy of rule classes is formed. An abstract base class specifies the method interpret(). Each concrete subclass implements  interpret() by accepting (as an argument) the current state of the language stream, and adding its contribution to the problem solving process.  
+
+#### Things to note for the Interpreter Design Pattern
+* Decide if a "little language" offers a justifiable return on investment.
+* Define a grammar for the language.
+* Map each production in the grammar to a class.
+* Organize the suite of classes into the structure of the Composite pattern.
+* Define an interpret(Context) method in the Composite hierarchy.
+* The Context object encapsulates the current state of the input and output as the former is parsed and the latter is accumulated. It is manipulated by each grammar class as the "interpreting" process transforms the input into the output.  
+
+#### Use Case for the Interpreter Design Pattern
+One of the most famous example of Interpreters are Musicians. Basically, the musical notation of the pitch of a sound and its duration is represented on a staff that provides the language of music. This language is used by the Musicians playing the music from the score and are able to reproduce the original pitch and duration of each sound represented.  
 
 
 
