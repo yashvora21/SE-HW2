@@ -34,20 +34,9 @@ public class WebTest
 		driver.close();
 		driver.quit();
 	}
-
-	@Test
-	public void Closed() throws Exception
-	{
-		driver.get("http://www.checkbox.io/studies.html");
-
-		WebDriverWait wait = new WebDriverWait(driver, 30);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@class='status']/span[.='CLOSED']")));
-		List<WebElement> spans = driver.findElements(By.xpath("//a[@class='status']/span[.='CLOSED']"));
-
-		assertNotNull(spans);
-		assertEquals(5, spans.size());
-	}
-
+	
+// Test Case to test "The participant count of "Frustration of Software Developers" is 55"
+	
 	@Test
 	public void ParticipantCount() throws Exception
 	{
@@ -55,10 +44,27 @@ public class WebTest
 
 		WebDriverWait wait = new WebDriverWait(driver, 30);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@class='status']/span[.='CLOSED']")));
-		List<WebElement> spans = driver.findElements(By.xpath("//span[.='Frustration of Software Developers']/parent::h3/parent::div/parent::div//span[@data-bind=\"text: votes\"]"));
+		List<WebElement> parCount = driver.findElements(By.xpath("//span[.='Frustration of Software Developers']/parent::h3/parent::div/parent::div//span[@data-bind=\"text: votes\"]"));
 
-		assertEquals("55", spans.get(0).getText());
+		assertEquals("55", parCount.get(0).getText());
 	}
+
+// Test Case to test "The total number of studies closed is 5."
+	
+	@Test
+	public void StatusClosed() throws Exception
+	{
+		driver.get("http://www.checkbox.io/studies.html");
+
+		WebDriverWait wait = new WebDriverWait(driver, 30);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@class='status']/span[.='CLOSED']")));
+		List<WebElement> statusClosed = driver.findElements(By.xpath("//a[@class='status']/span[.='CLOSED']"));
+
+		assertNotNull(statusClosed);
+		assertEquals(5, statusClosed.size());
+	}
+	
+// Test Case to test "If a status of a study is open, you can click on a "Participate" button."
 	
 	@Test
 	public void StatusOpenParticipate() throws Exception
@@ -67,11 +73,13 @@ public class WebTest
 
 		WebDriverWait wait = new WebDriverWait(driver, 30);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@class='status']/span[.='CLOSED']")));
-		List<WebElement> spans = driver.findElements(By.xpath("//a[@class='status']/span[.='OPEN']/parent::a/parent::div//button[.='Participate']"));
+		List<WebElement> participate = driver.findElements(By.xpath("//a[@class='status']/span[.='OPEN']/parent::a/parent::div//button[.='Participate']"));
 
-		assertEquals(true, spans.get(0).isEnabled());
+		assertEquals(true, participate.get(0).isEnabled());
 	}
 
+// Test Case to test "Check if the "Software Changes Survey" has a Amazon reward image."
+	
 	@Test
 	public void AmazonReward() throws Exception
 	{
@@ -79,10 +87,9 @@ public class WebTest
 
 		WebDriverWait wait = new WebDriverWait(driver, 30);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@class='status']/span[.='CLOSED']")));
-		List<WebElement> spans = driver.findElements(By.xpath("//span[ .='Software Changes Survey']/parent::h3/parent::div//img[@data-bind='attr: {src: awardImg}']"));
+		List<WebElement> amazonReward = driver.findElements(By.xpath("//span[ .='Software Changes Survey']/parent::h3/parent::div//img[@data-bind='attr: {src: awardImg}']"));
 
-		assertEquals("http://www.checkbox.io/media/amazongc-micro.jpg", spans.get(0).getAttribute("src"));
+		assertEquals("http://www.checkbox.io/media/amazongc-micro.jpg", amazonReward.get(0).getAttribute("src"));
 	}
-	
-	
+
 }
