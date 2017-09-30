@@ -103,13 +103,25 @@ binding_properties_one_way(src_obj, src_prop, dst_objs[], dst_props[])
 }
 ```
   
-### 2. 
+### 2. Thread Pool Pattern
+In computer programming, a thread pool is a software design pattern for achieving concurrency of execution in a computer program. A thread pool maintains multiple threads waiting for tasks to be allocated for concurrent execution by the supervising program. It is also called as a replicated workers or worker-crew model. This model increases performance and avoids latency in execution due to frequent creation and destruction of threads for short-lived tasks by maintaining a pool of threads. The number of available threads are tuned based on the computing resources available to the program, such as parallel processors, cores, memory, and network sockets. A synchronized queue, also known as a task queue is a common method of scheduling tasks for thread execution. Once the execution of a thread is completed, the waiting threads in the pool are removed from the queue, and placed into the completed task queue.  
 
 
+### 3. Guarded Suspension
+Guarded suspension is a software design pattern in concurrent programming for managing operations that require both a lock to be acquired and a precondition to be satisfied before the operation can be executed. The guarded suspension pattern is typically applied to method calls in object-oriented programs, and involves suspending the method call, and the calling thread, until the precondition which acts as a guard is satisfied. The guarded suspension pattern is generally only used when the developer is sure that a method call will be suspended for a reasonable finite period of time, since it blocks the execution. If a method call is suspended for too long, then the overall performance of the program is degraded, waiting for the precondition to be satisfied. If the developer is pretty sure that the method call will be suspended for indefinite or for quite a long duration, then the balking pattern may be used. In Java, the Object class provides the wait() and notify() methods to assist with guarded suspension.  
+
+An excellent example of an actual implementation would be a queue object with a get method that has a guard to detect when there are no items in the queue. Once the 'put' method notifies the other methods (eg, a get() method), the get() method can exit its guarded state and proceed with the call. Once the queue is empty, the get() method will again enter a guarded state.
+
+## The Code for the Unit Testing using REST-SELENIUM library is at the location: /REST-SELENIUM/WebTest.java
 
 ## References
-https://sourcemaking.com/design_patterns
-https://en.wikipedia.org/wiki/Binding_properties_pattern
+https://sourcemaking.com/design_patterns . 
+
+https://en.wikipedia.org/wiki/Binding_properties_pattern . 
+
+https://en.wikipedia.org/wiki/Thread_pool . 
+
+https://en.wikipedia.org/wiki/Guarded_suspension
 
 
 
